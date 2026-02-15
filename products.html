@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Products</title>
+    <link rel="stylesheet" href="styles.css"> <!-- Link to CSS for styles -->
+</head>
+<body>
+<header>
+    <h1>Our Products</h1>
+    <nav>
+        <ul>
+            <li><a href="#office">Office</a></li>
+            <li><a href="#manufacturing">Manufacturing</a></li>
+        </ul>
+    </nav>
+</header>
+
+<section>
+    <div class="filter">
+        <button onclick="filterProducts('all')">All</button>
+        <button onclick="filterProducts('office')">Office</button>
+        <button onclick="filterProducts('manufacturing')">Manufacturing</button>
+    </div>
+
+    <div class="product-cards">
+        <!-- Office Products -->
+        <div class="card office">
+            <img src="office_product1.jpg" alt="Office Product 1">
+            <h2>Office Product 1</h2>
+            <p>Description of Office Product 1.</p>
+            <span>Price: $100</span>
+        </div>
+        <div class="card office">
+            <img src="office_product2.jpg" alt="Office Product 2">
+            <h2>Office Product 2</h2>
+            <p>Description of Office Product 2.</p>
+            <span>Price: $200</span>
+        </div>
+        <div class="card office">
+            <img src="office_product3.jpg" alt="Office Product 3">
+            <h2>Office Product 3</h2>
+            <p>Description of Office Product 3.</p>
+            <span>Price: $150</span>
+        </div>
+
+        <!-- Manufacturing Products -->
+        <div class="card manufacturing">
+            <img src="manufacturing_product1.jpg" alt="Manufacturing Product 1">
+            <h2>Manufacturing Product 1</h2>
+            <p>Description of Manufacturing Product 1.</p>
+            <span>Price: $300</span>
+        </div>
+        <div class="card manufacturing">
+            <img src="manufacturing_product2.jpg" alt="Manufacturing Product 2">
+            <h2>Manufacturing Product 2</h2>
+            <p>Description of Manufacturing Product 2.</p>
+            <span>Price: $400</span>
+        </div>
+        <div class="card manufacturing">
+            <img src="manufacturing_product3.jpg" alt="Manufacturing Product 3">
+            <h2>Manufacturing Product 3</h2>
+            <p>Description of Manufacturing Product 3.</p>
+            <span>Price: $350</span>
+        </div>
+
+        <!-- Repeat for additional products as needed -->
+    </div>
+</section>
+
+<footer>
+    <p>© 2026 Your Company Name</p>
+</footer>
+
+<script>
+function filterProducts(category) {
+    const cards = document.querySelectorAll('.product-cards .card');
+    cards.forEach(card => {
+        if (category === 'all' || card.classList.contains(category)) {
+            card.style.display = 'block';
+        } else {
+            card.style.display = 'none';
+        }
+    });
+}
+</script>
+</body>
+</html>
